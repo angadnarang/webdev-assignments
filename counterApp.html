@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Counter App</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        .center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.c{
+    padding: 10px;
+    text-align: center;
+}
+.d{
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+    </style>
+    </head>
+    <body>
+
+  <div class="center">
+     <h1 align="center">Counter</h1>
+
+   <div class="c"> <span>0</span><br></div>
+
+<div class="d"> <button id="btn1">-</button>
+    <button id="btn2">reset</button>
+   <button id="btn3">+</button></div>
+</div>
+        <script>
+            $("#btn3").on('click', event => {
+             var a = $("span").text();
+             if(a<10&&a>=0)
+           {  a++;
+             if(a%2==0)
+       { 
+        $("body").css("background-color","blue");
+        $("span").css("color","white");
+      }
+        else
+      {  $("body").css("background-color","grey");
+        $("span").css("color","red");
+      }
+    }
+            $("span").html(a)
+});
+$("#btn1").on('click', event =>{
+    var b= $("span").text();
+    if(b<=10&&b>0)
+      {  b--;
+        if(b%2==0)
+       { 
+        $("body").css("background-color","blue");
+        $("span").css("color","white");
+      }
+        else
+       { $("body").css("background-color","grey");
+        $("span").css("color","red");
+      }
+    }
+    $("span").html(b);
+
+});
+$("#btn2").on('click', event =>{
+    $("span").text(0); 
+    $("body").css("background-color","white");
+    $("span").css("color","black");
+});
+           
+        </script>
+    </body>
+</html>
